@@ -1,0 +1,1 @@
+{"fields":[{"id":"name","label":"Name","required":true,"readOnly":false,"placeHolder":"your name"},{"id":"email","label":"e-mail","required":true,"readOnly":false,"placeHolder":"your email"}]}

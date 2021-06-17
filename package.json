@@ -1,0 +1,62 @@
+{
+  "name": "forms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --mode development",
+    "start": "webpack serve --open --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@talentsoft/design-system": "^1.12.1",
+    "@talentsoft/forms": "^1.9.2",
+    "@testing-library/dom": "^7.30.4",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/react-hooks": "^5.1.2",
+    "@testing-library/user-event": "^13.1.5",
+    "@types/jest": "^26.0.22",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
+    "node-polyfill-webpack-plugin": "^1.1.3",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.1.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@date-io/date-fns": "^2.10.11",
+    "@talentsoft/font": "^1.0.1",
+    "@talentsoft/icons": "^1.1.1",
+    "axios": "^0.21.1",
+    "date-fns": "^2.22.1",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^7.0.2",
+    "msw": "^0.28.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-query": "^3.13.12"
+  },
+  "msw": {
+    "workerDirectory": "dist"
+  }
+}
