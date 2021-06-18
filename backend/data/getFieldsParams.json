@@ -1,1 +1,1 @@
-{"fields":[{"id":"name","label":"Name","required":true,"readOnly":false,"placeHolder":"your name"},{"id":"email","label":"e-mail","required":true,"readOnly":false,"placeHolder":"your email"}]}
+{"fields":[{"id":"name","visible":true,"required":true,"label":"Rocky","readOnly":false,"placeHolder":""},{"id":"email","visible":true,"required":true,"label":"e-mail","readOnly":false,"placeHolder":""},{"id":"message","visible":true,"label":"Message","readOnly":false,"placeHolder":"","multiline":true,"rows":4,"rowsMax":6}]}

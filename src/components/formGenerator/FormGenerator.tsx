@@ -7,33 +7,39 @@ import {
   SubmitHandler,
 } from "@talentsoft/forms";
 import { LoaderDots } from "@talentsoft/design-system";
-import { useGetData } from "../../query-store/useGetData";
+import { useGetData as useGetFields } from "../../query-store/useGetData";
 import { IFormFields } from "../../types/IFormFields";
-import { sleep } from "../../utils/sleep";
+import { createField, sleep } from "../../utils";
 import { useCreateContact } from "../../query-store/useCreateContact";
-import { Layout } from "../layout/Layout";
+import { Layout } from "../strutures/layout/Layout";
+import { IContact } from "../../types";
 
 export const FormGeneratorComponent = () => {
   const [values, setValues] = React.useState<IFormFields>();
+  
   const { createContact } = useCreateContact();
+
   const handleSubmit: SubmitHandler<IFormFields> = React.useCallback(
     async (submittedValues, helper) => {
       await sleep(3000);
       setValues(submittedValues);
-      const data = await createContact(submittedValues);
+      // TODO add mapping IFormField to IContact
+      const data = await createContact(submittedValues as IContact);
       helper.setFieldError(data.field, data.message);
     },
     []
   );
 
-  const { data, isLoading } = useGetData();
+  const { data, isLoading } = useGetFields();
 
   if (isLoading) {
     return <LoaderDots />;
   }
+  const fields = createField(data);
+  
   return (
     <Layout>
-      <FormGeneratorProvider form={data} onSubmit={handleSubmit}>
+      <FormGeneratorProvider form={fields} onSubmit={handleSubmit}>
         <FormGenerator>
           <SubmitButton>Submit</SubmitButton>
         </FormGenerator>

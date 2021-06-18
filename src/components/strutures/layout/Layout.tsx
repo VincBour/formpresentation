@@ -4,7 +4,8 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
     grid: {
         justifyContent: 'center',
-        width: '70%'
+        width: '70%',
+        height: 'inherit'
     },
     card: {
         width: 'inherit'

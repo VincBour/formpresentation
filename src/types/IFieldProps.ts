@@ -1,5 +1,4 @@
-export interface IFieldModel {
-    id: string,
+export interface IFieldProps {
     label: string,
     required: boolean,
     readOnly: boolean,

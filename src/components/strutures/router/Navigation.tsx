@@ -2,8 +2,6 @@ import { Tab, Tabs } from "@talentsoft/design-system";
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-
-
 export const Navigation = () => {
   const [value, setValue] = React.useState(0);
   let history = useHistory();
@@ -13,14 +11,17 @@ export const Navigation = () => {
       case '/':
         setValue(0);
         break;
+      case '/classicForm':
+      setValue(1);
+      break;
       case '/talentsoftForm':
-        setValue(1);
-        break;
-      case '/formGenerator':
         setValue(2);
         break;
-      case '/manage':
+      case '/formGenerator':
         setValue(3);
+        break;
+      case '/manage':
+        setValue(4);
         break;
       default:
         break;

@@ -7,14 +7,14 @@ import {
   TableRow,
   useToaster,
 } from "@talentsoft/design-system";
-import { useGetParams } from "../../query-store/useGetParams";
+import { useGetFieldsParams } from "../../query-store/useGetParams";
 import { Form, schemaValidator, SubmitButton, SubmitHandler, CheckboxField, TextField } from "@talentsoft/forms";
 import { IFieldParams } from "../../types/IFieldParams";
-import { IFieldModel } from "../../contract/IFieldModel";
 import { useSaveParams } from "../../query-store/useSaveParams";
+import { IFieldProps } from "../../types/IFieldProps";
 
 export const ManageFields = () => {
-  const { data, isLoading, refetch } = useGetParams();
+  const { data, isLoading, refetch } = useGetFieldsParams();
   const { mutateAsync } = useSaveParams();
   const { displaySuccess } = useToaster();
   React.useEffect(() => {
@@ -22,7 +22,6 @@ export const ManageFields = () => {
   }, [])
   const handleSubmit: SubmitHandler<IFieldParams> = React.useCallback(
       async (submittedValues, helper) => {
-          console.log('submittedValues', submittedValues);
           mutateAsync(submittedValues);
           displaySuccess('Successful');
         },
@@ -32,20 +31,15 @@ export const ManageFields = () => {
         if (isLoading) {
             return <LoaderDots />;
         }
-        const initialValuesForName = data?.fields.find((f) => f.id === "name") as Omit<
-        IFieldModel,
-        "id"
-        >;
-        const initialValuesForEmail = data?.fields.find((f) => f.id === "email") as Omit<
-        IFieldModel,
-        "id"
-        >;
+        const initialValuesForName = data?.fields.find((f) => f.id === "name") as IFieldProps;
+        const initialValuesForEmail = data?.fields.find((f) => f.id === "email") as IFieldProps;
+    
   return (
     <>
       <Form<IFieldParams>
         initialValues={{
-          name: { ...initialValuesForName },
-          email: { ...initialValuesForEmail },
+          name: { ...initialValuesForName! },
+          email: { ...initialValuesForEmail! },
         }}
         validationSchema={schemaValidator.object().shape({
           name: schemaValidator.object((

@@ -1,4 +1,6 @@
 import { useQuery } from "react-query";
-import services from '../services';
+import services from "../services";
+import { GET_FIELDS } from "./query-key";
 
-export const useGetData = () => useQuery('Data', services.getData());
+export const useGetData = () =>
+  useQuery({ queryKey: GET_FIELDS, queryFn: services.getFields() });

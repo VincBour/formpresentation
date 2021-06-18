@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageError from '../../../static/images/error.svg';
+import ImageError from '../../../../static/images/error.svg';
 
 export const ErrorPage = () => {
     return (<div>

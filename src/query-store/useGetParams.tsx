@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
-import { IFieldModel } from "../contract/IFieldModel";
 import services from '../services';
+import { IFieldParamsModel } from "../contracts";
+import { GET_FIELDS_PARAMS } from "./query-key";
 
-export const useGetParams = () => useQuery<{fields: IFieldModel[]}, Error, {fields: IFieldModel[]}>('Params', services.getParams());
+export const useGetFieldsParams = () => useQuery<IFieldParamsModel, Error, IFieldParamsModel>({queryKey: GET_FIELDS_PARAMS, queryFn: services.getFieldsParams()});

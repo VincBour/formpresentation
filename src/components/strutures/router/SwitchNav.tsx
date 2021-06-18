@@ -1,12 +1,11 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
-import { ClassicForm } from "../classicForm/ClassicForm"
+import { ClassicForm } from "../../classicForm/ClassicForm"
 import { ErrorPage } from "../error/ErrorPage"
-import { FormGeneratorComponent } from "../formGenerator/FormGenerator"
-import { TalentsoftForm } from "../forms/TalentsoftForm"
-import { Home } from "../home/Home"
-import { ManageFields } from "../manageFields/ManageFields"
-import { Thanks } from "../thanks/Thanks"
+import { FormGeneratorComponent } from "../../formGenerator/FormGenerator"
+import { TalentsoftForm } from "../../talensoftForms/TalentsoftForm"
+import { Home } from "../../home/Home"
+import { ManageFields } from "../../manageFields/ManageFields"
 
 export const SwitchNav = () => {
     return (
@@ -25,9 +24,6 @@ export const SwitchNav = () => {
             </Route>
             <Route path='/manage'>
                 <ManageFields />
-            </Route>
-            <Route path='/thanks'>
-                <Thanks />
             </Route>
             <Route path='/*'>
                 <ErrorPage />

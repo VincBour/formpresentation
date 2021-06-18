@@ -1,8 +1,8 @@
 import React from 'react';
-import DesignSystemProvider from './themeProvider/AppThemeProvider';
+import DesignSystemProvider from './components/strutures/themeProvider/AppThemeProvider';
 import { HashRouter as Router } from 'react-router-dom';
-import { Navigation } from './components/router/Navigation';
-import { SwitchNav } from './components/router/SwitchNav';
+import { Navigation } from './components/strutures/router/Navigation';
+import { SwitchNav } from './components/strutures/router/SwitchNav';
 import { makeStyles } from '@talentsoft/design-system';
 import './globalStyle.css';
 
@@ -14,9 +14,9 @@ const useStyle = makeStyles((theme) => ({
     },
     content: {
         display: 'flex',
-        height: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        height: 'inherit'
     }
 }))
 export const App = () => {
